@@ -13,6 +13,10 @@ export default function App({ Component, pageProps }: AppProps) {
     <CartContext.Provider value={[cart, setCart]}>
       <Head>
         <title>Luara | Shop</title>
+        <meta
+          name="description"
+          content='Minimal "ecommerce" template with Google Sheets, NextJS SSG and React'
+        />
       </Head>
       <Nav />
       <Component {...pageProps} />
