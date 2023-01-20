@@ -1,7 +1,9 @@
 # Luara
 
 Minimal "ecommerce" template with Google Sheets, NextJS SSG and React
-![image](https://user-images.githubusercontent.com/49006052/213796672-e03dd130-5bcc-4c18-b1ae-4ea0a364f239.png)
+![image](https://user-images.githubusercontent.com/49006052/213796930-b453c7e9-e512-427e-aadc-b4f8476bdba7.png)
+![image](https://user-images.githubusercontent.com/49006052/213797181-018d351b-6793-4c2b-8338-6b3b6394062c.png)
+
 ## Getting Started
 
 To create a custom local Luara page:
