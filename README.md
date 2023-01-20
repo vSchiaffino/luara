@@ -1,10 +1,11 @@
 # Luara
 
 Minimal "ecommerce" template with Google Sheets, NextJS SSG and React
-
+![image](https://user-images.githubusercontent.com/49006052/213796672-e03dd130-5bcc-4c18-b1ae-4ea0a364f239.png)
 ## Getting Started
 
 To create a custom local Luara page:
+
 
 1. Create a google sheet like [this](https://docs.google.com/spreadsheets/d/1QqpNyXh4C9kyJ0dGnpZx_zy_7josC_d8Kz6Kw1D5HWQ/edit?usp=sharing)
 2. In the google docs spreadsheet, click on file -> Share -> To the web, select as .csv value and copy the link generated (should look like [this](https://docs.google.com/spreadsheets/d/e/2PACX-1vTj_BVYqprfKVQFKs6H_Tv5o8h2fI2g0cqQiwJLmTbQNp4lJE-7ipknc53_A0vr9PxZngugvki5wwPB/pub?output=csv))
