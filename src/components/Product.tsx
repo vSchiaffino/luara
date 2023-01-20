@@ -1,10 +1,12 @@
 import { parseCurrency } from '@/helpers/currency'
 import { IProduct as IProduct } from '@/interfaces'
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { AddToCart } from './AddToCart'
 import { CartContext } from '@/cartContext'
 
 export const Product = ({ product }: { product: IProduct }) => {
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true))
   const [cart, setCart] = useContext(CartContext)
   const onClickCart = (product: IProduct) => {
     setCart(
@@ -28,7 +30,7 @@ export const Product = ({ product }: { product: IProduct }) => {
       <div className="flex justify-between items-center">
         <h2 className="text-xl font-bold text-indigo-900">{product.title}</h2>
         <span className="text-indigo-700 font-bold text-lg">
-          {parseCurrency(product.price)}
+          {mounted && parseCurrency(product.price)}
         </span>
       </div>
 
