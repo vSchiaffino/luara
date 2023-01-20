@@ -20,7 +20,9 @@ export default function Index({ products }: IndexProps) {
 }
 
 export const getStaticProps: GetStaticProps<IndexProps> = async () => {
-  const REVALIDATE_TIME_IN_SECONDS = 30 // 30 seconds
+  const REVALIDATE_TIME_IN_SECONDS = Number(
+    process.env.REVALIDATE_TIME_IN_SECONDS || 30
+  )
   return {
     revalidate: REVALIDATE_TIME_IN_SECONDS,
     props: {
