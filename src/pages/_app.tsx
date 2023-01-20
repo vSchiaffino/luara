@@ -1,23 +1,17 @@
-import Link from 'next/link'
+import { useState } from 'react'
 import '../styles/globals.css'
 
 import type { AppProps } from 'next/app'
+import { CartContext } from '@/cartContext'
+import { IProduct } from '@/interfaces'
+import { Nav } from '@/components/Nav'
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [cart, setCart] = useState<IProduct[]>([])
   return (
-    <div>
-      <nav className="bg-indigo-500 fixed w-full top-0">
-        <ul className="py-5">
-          <div className="container mx-auto max-w-7xl flex justify-center">
-            <li className="px-5">
-              <Link href="/" className="text-white font-medium text-lg">
-                Luara
-              </Link>
-            </li>
-          </div>
-        </ul>
-      </nav>
+    <CartContext.Provider value={[cart, setCart]}>
+      <Nav />
       <Component {...pageProps} />
-    </div>
+    </CartContext.Provider>
   )
 }

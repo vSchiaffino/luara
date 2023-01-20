@@ -1,12 +1,14 @@
+import { CartContext } from '@/cartContext'
 import { parseCurrency } from '@/helpers/currency'
-import { Product } from '@/interfaces'
-import React from 'react'
+import { IProduct } from '@/interfaces'
+import React, { useContext } from 'react'
 
 export interface CartProps {
-  cart: Product[]
+  cart: IProduct[]
 }
 
-export const Cart = ({ cart }: CartProps) => {
+export const CartComponent = () => {
+  const [cart] = useContext(CartContext)
   const sendWhatsapp = () => {
     const message = cart
       .map((product) => `* ${product.title} - ${parseCurrency(product.price)}`)
@@ -18,7 +20,7 @@ export const Cart = ({ cart }: CartProps) => {
 
     window.open(`https://wa.me/1131334144?text=${encodeURIComponent(message)}`)
   }
-  return (
+  return cart.length > 0 ? (
     <div className="fixed bottom-0 w-full flex">
       <div
         className="mx-auto w-1/2 py-4 rounded-t-lg 
@@ -28,5 +30,7 @@ export const Cart = ({ cart }: CartProps) => {
         You have ({cart.length}) items in your cart - Click to checkout
       </div>
     </div>
+  ) : (
+    <></>
   )
 }

@@ -1,4 +1,4 @@
-import { Product } from '@/interfaces'
+import { IProduct } from '@/interfaces'
 import axios from 'axios'
 import papa from 'papaparse'
 
@@ -12,7 +12,7 @@ export default class Products {
       header: true,
     })
     if (errors.length) throw new Error(errors.map((e) => e.message).join('\n'))
-    const products: Product[] = data.map((product: any) => ({
+    const products: IProduct[] = data.map((product: any) => ({
       ...product,
       price: Number(product.price),
     }))
