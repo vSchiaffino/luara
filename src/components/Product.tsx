@@ -6,7 +6,7 @@ import { CartContext } from '@/cartContext'
 
 export const Product = ({ product }: { product: IProduct }) => {
   const [mounted, setMounted] = useState(false)
-  useEffect(() => setMounted(true))
+  useEffect(() => setMounted(true), [])
   const [cart, setCart] = useContext(CartContext)
   const onClickCart = (product: IProduct) => {
     setCart(
