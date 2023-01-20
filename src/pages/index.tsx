@@ -40,7 +40,9 @@ export default function Index({ products }: IndexProps) {
                 <h2 className="text-xl font-bold text-indigo-900">
                   {product.title}
                 </h2>
-                <span>{parseCurrency(product.price)}</span>
+                <span className="text-indigo-700 font-bold text-lg">
+                  {parseCurrency(product.price)}
+                </span>
               </div>
 
               <p className="text-indigo-900">{product.description}</p>
